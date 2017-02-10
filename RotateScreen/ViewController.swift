@@ -50,10 +50,8 @@ class ItemViewController: UIViewController {
         
         view.addSubview(collectionView)
         
-        view.addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
-        view.addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
-        
-
+        view.addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", views: collectionView)
+        view.addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: collectionView)
         
     }
 }
@@ -72,8 +70,6 @@ extension ItemViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath as IndexPath) as UICollectionViewCell
         
-        cell.backgroundColor  = .blue
-        
         let textLabel = UILabel(frame: .zero)
         
         textLabel.textColor = UIColor.white
@@ -90,7 +86,7 @@ extension ItemViewController: UICollectionViewDataSource {
         
         cell.addConstraintsWithFormat(format: "H:|[v0]|", views: textLabel)
         cell.addConstraintsWithFormat(format: "V:|[v0]|", views: textLabel)
-        
+    
         
         return cell
     }
@@ -131,4 +127,19 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsetsMake(topInset, 0, bottInset, 0)
     }
     
-}
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell : UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 10
+        cell.backgroundColor = .red
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell : UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 10
+        cell.backgroundColor = .clear
+    }
+
+    
+   }
