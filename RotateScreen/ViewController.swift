@@ -132,6 +132,7 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout {
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 10
         cell.backgroundColor = .red
+        print("Selected: \(indexPath.row)" )
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -139,6 +140,7 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout {
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 10
         cell.backgroundColor = .clear
+        print("DeSelected: \(indexPath.row)" )
     }
 
     
