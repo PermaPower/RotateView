@@ -13,9 +13,8 @@ class ItemViewController: UIViewController {
     // Upon rotation of device, invalidateLayout
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView.collectionViewLayout.invalidateLayout()
-        
-        }
-
+    }
+    
     // Setup cellID for collectionView
     let cellId = "cellID"
     
@@ -23,7 +22,7 @@ class ItemViewController: UIViewController {
     let months: [String] = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
     
     let collectionView: UICollectionView = {
-    
+        
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.allowsMultipleSelection = true
@@ -33,7 +32,7 @@ class ItemViewController: UIViewController {
         return cv
         
     }()
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -50,7 +49,7 @@ class ItemViewController: UIViewController {
         
         view.addSubview(collectionView)
         
-        view.addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", views: collectionView)
+        view.addConstraintsWithFormat(format: "H:|-80-[v0]-10-|", views: collectionView)
         view.addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: collectionView)
         
     }
@@ -64,7 +63,7 @@ extension ItemViewController: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
-
+    
     // Modify the cell contents here
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -86,7 +85,6 @@ extension ItemViewController: UICollectionViewDataSource {
         
         cell.addConstraintsWithFormat(format: "H:|[v0]|", views: textLabel)
         cell.addConstraintsWithFormat(format: "V:|[v0]|", views: textLabel)
-    
         
         return cell
     }
@@ -120,13 +118,14 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout {
         let margings = 2 * (columns - 1)
         let totalCellwidth = (collectionView.frame.size.width - CGFloat(margings)) / CGFloat(columns)
         let totalCellHeight = totalCellwidth * 2 + 5
-
+        
         let topInset = (self.view.frame.size.height - CGFloat(totalCellHeight)) / 2
         let bottInset = (self.view.frame.size.height - CGFloat(totalCellHeight)) / 2
         
         return UIEdgeInsetsMake(topInset, 0, bottInset, 0)
     }
     
+    // Detetect if UICollectionViewCell was selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell : UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
         cell.layer.masksToBounds = true
@@ -135,6 +134,7 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout {
         print("Selected: \(indexPath.row)" )
     }
     
+    // Detetect if UICollectionViewCell was deselected
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell : UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
         cell.layer.masksToBounds = true
@@ -142,6 +142,5 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout {
         cell.backgroundColor = .clear
         print("DeSelected: \(indexPath.row)" )
     }
-
     
-   }
+}
