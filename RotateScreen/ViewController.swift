@@ -13,6 +13,7 @@ class ItemViewController: UIViewController {
     // Upon rotation of device, invalidateLayout
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView.collectionViewLayout.invalidateLayout()
+        
         }
 
     // Setup cellID for collectionView
@@ -51,6 +52,7 @@ class ItemViewController: UIViewController {
         
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         view.addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
+        
 
         
     }
@@ -72,7 +74,8 @@ extension ItemViewController: UICollectionViewDataSource {
         
         cell.backgroundColor  = .blue
         
-        let textLabel = UILabel(frame: CGRect(x:0, y:0, width:cell.frame.size.width, height:cell.frame.size.height))
+        let textLabel = UILabel(frame: .zero)
+        
         textLabel.textColor = UIColor.white
         textLabel.adjustsFontSizeToFitWidth = true
         textLabel.textAlignment = .center
@@ -80,8 +83,14 @@ extension ItemViewController: UICollectionViewDataSource {
         textLabel.layer.borderWidth = 1
         textLabel.layer.borderColor = UIColor.white.cgColor
         textLabel.layer.masksToBounds = true
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.text = months[indexPath.row]
+        
         cell.contentView.addSubview(textLabel)
+        
+        cell.addConstraintsWithFormat(format: "H:|[v0]|", views: textLabel)
+        cell.addConstraintsWithFormat(format: "V:|[v0]|", views: textLabel)
+        
         
         return cell
     }
