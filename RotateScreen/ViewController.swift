@@ -87,11 +87,12 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         let columns = 6
-        let totalCellWidth = Float(collectionView.bounds.width) / Float(columns)
-        let totalCellHeight = totalCellWidth * 2
+        let margings = 2 * (columns - 1)
+        let totalCellwidth = (collectionView.frame.size.width - CGFloat(margings)) / CGFloat(columns)
+        let totalCellHeight = totalCellwidth * 2 + 5
 
-        let topInset = (self.view.frame.height - CGFloat(totalCellHeight)) / 2
-        let bottInset = (self.view.frame.height - CGFloat(totalCellHeight)) / 2
+        let topInset = (self.view.frame.size.height - CGFloat(totalCellHeight)) / 2
+        let bottInset = (self.view.frame.size.height - CGFloat(totalCellHeight)) / 2
         
         return UIEdgeInsetsMake(topInset, 0, bottInset, 0)
     }
