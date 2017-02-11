@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ActivityMonthViewController.swift
 //  RotateScreen
 //
 //  Created by David on 10/2/17.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ItemViewController: UIViewController {
+class ActivityMonthController: UIViewController {
+    
+   let style = Style.myApp
     
     // Upon rotation of device, invalidateLayout
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -38,13 +40,14 @@ class ItemViewController: UIViewController {
         ci.image = UIImage(named: "calendar")
         ci.contentMode = .scaleAspectFit
         ci.translatesAutoresizingMaskIntoConstraints = false
-        ci.backgroundColor = .white
+        ci.backgroundColor = .myAppWhite
         ci.clipsToBounds = true
         ci.layer.masksToBounds = true
         ci.layer.cornerRadius = 10
         return ci
     }()
     
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -63,28 +66,21 @@ class ItemViewController: UIViewController {
         view.addSubview(collectionView)
         
         view.addConstraintsWithFormat(format: "H:|-10-[v0(50)]-10-[v1]-10-|", views: calendarIcon, collectionView)
-       // view.addConstraintsWithFormat(format: "V:|-[v0(50)]", views: calendarIcon)
         view.addConstraintsWithFormat(format: "V:|-[v0]-|", views: collectionView)
         
-        
-        let widthConstraint = NSLayoutConstraint(item: calendarIcon, attribute: .width, relatedBy: .equal,
-                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
-        
-        let heightConstraint = NSLayoutConstraint(item: calendarIcon, attribute: .height, relatedBy: .equal,
-                                                  toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
-        
-        let xConstraint = NSLayoutConstraint(item: calendarIcon, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
-        
-        let yConstraint = NSLayoutConstraint(item: calendarIcon, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        // Constraints for calendarIcon - center Y of view
+        let widthConstraint   = NSLayoutConstraint(item: calendarIcon, attribute: .width,   relatedBy: .equal, toItem: nil,  attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
+        let heightConstraint  = NSLayoutConstraint(item: calendarIcon, attribute: .height,  relatedBy: .equal, toItem: nil,  attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
+        let xConstraint       = NSLayoutConstraint(item: calendarIcon, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX,        multiplier: 1.0, constant: 0)
+        let yConstraint       = NSLayoutConstraint(item: calendarIcon, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY,        multiplier: 1.0, constant: 0)
         
         NSLayoutConstraint.activate([widthConstraint, heightConstraint, xConstraint, yConstraint])
-
         
     }
 }
 
 
-extension ItemViewController: UICollectionViewDataSource {
+extension ActivityMonthController: UICollectionViewDataSource {
     
     // Return the number of cells in collecitonView
     @available(iOS 6.0, *)
@@ -99,12 +95,12 @@ extension ItemViewController: UICollectionViewDataSource {
         
         let textLabel = UILabel(frame: .zero)
         
-        textLabel.textColor = UIColor.white
+        textLabel.textColor = UIColor.myAppWhite
         textLabel.adjustsFontSizeToFitWidth = true
         textLabel.textAlignment = .center
         textLabel.layer.cornerRadius = 10
         textLabel.layer.borderWidth = 1
-        textLabel.layer.borderColor = UIColor.white.cgColor
+        textLabel.layer.borderColor = UIColor.myAppWhite.cgColor
         textLabel.layer.masksToBounds = true
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.text = months[indexPath.row]
@@ -119,7 +115,7 @@ extension ItemViewController: UICollectionViewDataSource {
     
 }
 
-extension ItemViewController: UICollectionViewDelegateFlowLayout {
+extension ActivityMonthController: UICollectionViewDelegateFlowLayout {
     
     // Divide the collectionview by 6 x 2
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -158,7 +154,7 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout {
         let cell : UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 10
-        cell.backgroundColor = .red
+        cell.backgroundColor = UIColor.myAppRed
         print("Selected: \(indexPath.row)" )
     }
     

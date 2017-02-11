@@ -1,11 +1,10 @@
 //
 //  Extensions.swift
-//  PlantCat
+//  RotateScreen
 //
 //  Created by David on 30/1/17.
 //  Copyright © 2017 David. All rights reserved.
 //
-
 import UIKit
 
 extension UIColor {
