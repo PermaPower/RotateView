@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        window?.rootViewController = ActivityMonthController()
-
+        //window?.rootViewController = ActivityMonthController()
+        window?.rootViewController = PlantDetails()
         
         
         return true

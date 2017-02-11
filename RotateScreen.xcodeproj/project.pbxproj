@@ -10,6 +10,7 @@
 		637340A81E4E912200A3FCF8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637340A71E4E912200A3FCF8 /* Extensions.swift */; };
 		637340AA1E4E91DD00A3FCF8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637340A91E4E91DD00A3FCF8 /* Style.swift */; };
 		637340AE1E4E92F600A3FCF8 /* Style+myApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637340AD1E4E92F600A3FCF8 /* Style+myApp.swift */; };
+		637340B21E4EC37900A3FCF8 /* PlantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637340B11E4EC37900A3FCF8 /* PlantDetails.swift */; };
 		63BD33EF1E4D384D00BBF601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD33EE1E4D384D00BBF601 /* AppDelegate.swift */; };
 		63BD33F11E4D384D00BBF601 /* ActivityMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD33F01E4D384D00BBF601 /* ActivityMonthViewController.swift */; };
 		63BD33F41E4D384D00BBF601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BD33F21E4D384D00BBF601 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		637340A71E4E912200A3FCF8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		637340A91E4E91DD00A3FCF8 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		637340AD1E4E92F600A3FCF8 /* Style+myApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Style+myApp.swift"; sourceTree = "<group>"; };
+		637340B11E4EC37900A3FCF8 /* PlantDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetails.swift; sourceTree = "<group>"; };
 		63BD33EB1E4D384D00BBF601 /* RotateScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotateScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BD33EE1E4D384D00BBF601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63BD33F01E4D384D00BBF601 /* ActivityMonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMonthViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				63BD33EE1E4D384D00BBF601 /* AppDelegate.swift */,
+				637340B11E4EC37900A3FCF8 /* PlantDetails.swift */,
 				63BD33F01E4D384D00BBF601 /* ActivityMonthViewController.swift */,
 				63BD33F21E4D384D00BBF601 /* Main.storyboard */,
 				63BD33F51E4D384D00BBF601 /* Assets.xcassets */,
@@ -164,6 +167,7 @@
 			files = (
 				63BD33F11E4D384D00BBF601 /* ActivityMonthViewController.swift in Sources */,
 				637340AE1E4E92F600A3FCF8 /* Style+myApp.swift in Sources */,
+				637340B21E4EC37900A3FCF8 /* PlantDetails.swift in Sources */,
 				637340A81E4E912200A3FCF8 /* Extensions.swift in Sources */,
 				63BD33EF1E4D384D00BBF601 /* AppDelegate.swift in Sources */,
 				637340AA1E4E91DD00A3FCF8 /* Style.swift in Sources */,
