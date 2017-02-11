@@ -99,6 +99,7 @@
 				TargetAttributes = {
 					63BD33EA1E4D384D00BBF601 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = TS49475533;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -264,6 +265,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TS49475533;
 				INFOPLIST_FILE = RotateScreen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PermaculturePower.RotateScreen;
@@ -276,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TS49475533;
 				INFOPLIST_FILE = RotateScreen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PermaculturePower.RotateScreen;
@@ -303,6 +306,7 @@
 				63BD33FF1E4D384D00BBF601 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

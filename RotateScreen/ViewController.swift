@@ -28,9 +28,21 @@ class ItemViewController: UIViewController {
         cv.allowsMultipleSelection = true
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.isScrollEnabled = false
-        
         return cv
         
+    }()
+    
+    let calendarIcon: UIImageView = {
+        
+        let ci = UIImageView()
+        ci.image = UIImage(named: "calendar")
+        ci.contentMode = .scaleAspectFit
+        ci.translatesAutoresizingMaskIntoConstraints = false
+        ci.backgroundColor = .white
+        ci.clipsToBounds = true
+        ci.layer.masksToBounds = true
+        ci.layer.cornerRadius = 10
+        return ci
     }()
     
     override func viewDidLoad() {
@@ -47,10 +59,26 @@ class ItemViewController: UIViewController {
     
     func setupController() {
         
+        view.addSubview(calendarIcon)
         view.addSubview(collectionView)
         
-        view.addConstraintsWithFormat(format: "H:|-80-[v0]-10-|", views: collectionView)
-        view.addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: collectionView)
+        view.addConstraintsWithFormat(format: "H:|-10-[v0(50)]-10-[v1]-10-|", views: calendarIcon, collectionView)
+       // view.addConstraintsWithFormat(format: "V:|-[v0(50)]", views: calendarIcon)
+        view.addConstraintsWithFormat(format: "V:|-[v0]-|", views: collectionView)
+        
+        
+        let widthConstraint = NSLayoutConstraint(item: calendarIcon, attribute: .width, relatedBy: .equal,
+                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
+        
+        let heightConstraint = NSLayoutConstraint(item: calendarIcon, attribute: .height, relatedBy: .equal,
+                                                  toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
+        
+        let xConstraint = NSLayoutConstraint(item: calendarIcon, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
+        
+        let yConstraint = NSLayoutConstraint(item: calendarIcon, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        
+        NSLayoutConstraint.activate([widthConstraint, heightConstraint, xConstraint, yConstraint])
+
         
     }
 }
